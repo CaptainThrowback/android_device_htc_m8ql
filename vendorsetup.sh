@@ -1,0 +1,2 @@
+add_lunch_combo omni_m8ql-userdebug
+add_lunch_combo omni_m8ql-eng
