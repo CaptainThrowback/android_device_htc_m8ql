@@ -62,6 +62,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4194304000 # Needs to be updated from cat pr
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1744830464
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
 
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -71,13 +72,14 @@ BOARD_RECOVERY_SWIPE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_USES_MMCUTILS := true
 TARGET_PREBUILT_KERNEL := device/htc/m8ql/recovery/kernel
-TARGET_RECOVERY_INITRC := device/htc/m8ql/recovery/etc/init.rc
+TARGET_RECOVERY_INITRC := device/htc/m8ql/recovery/init.rc
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565" # Not sure if this is correct - used auto pixel format patch
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 # TWRP Build Flags
 TW_THEME := portrait_hdpi
 TW_INCLUDE_CRYPTO := true
+TW_NO_EXFAT_FUSE := true
 TW_NO_SCREEN_BLANK := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 
