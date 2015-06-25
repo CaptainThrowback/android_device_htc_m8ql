@@ -73,7 +73,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_USES_MMCUTILS := true
 TARGET_PREBUILT_KERNEL := device/htc/m8ql/recovery/kernel
 TARGET_RECOVERY_INITRC := device/htc/m8ql/recovery/init.rc
-TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565" # Not sure if this is correct - used auto pixel format patch
+TARGET_RECOVERY_PIXEL_FORMAT := "BGR_555"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 # TWRP Build Flags
