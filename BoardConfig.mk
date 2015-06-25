@@ -51,9 +51,11 @@ TARGET_2ND_CPU_VARIANT := generic
 # Kernel
 BOARD_KERNEL_BASE := 0x80078000
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive
+BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01f88000 --tags_offset 0x01d88000 --dt device/htc/m8ql/recovery/dt.img
+BOARD_CUSTOM_BOOTIMG_MK := device/htc/m8ql/recovery/mkbootimg.mk
 KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_CONFIG := m8qlul_defconfig
 
@@ -74,7 +76,7 @@ BOARD_RECOVERY_SWIPE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_USES_MMCUTILS := true
 TARGET_RECOVERY_INITRC := device/htc/m8ql/recovery/init.rc
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888" # Not sure if this is correct - used auto pixel format patch
+TARGET_RECOVERY_PIXEL_FORMAT := "BGR_555"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 # TWRP Build Flags
