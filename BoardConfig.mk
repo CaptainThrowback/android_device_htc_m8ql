@@ -49,11 +49,13 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80078000
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01f88000 --tags_offset 0x01d88000 --dt device/htc/m8ql/recovery/dt.img
+KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_CONFIG := m8qlul_defconfig
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
@@ -71,7 +73,6 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_USES_MMCUTILS := true
-TARGET_PREBUILT_KERNEL := device/htc/m8ql/recovery/kernel
 TARGET_RECOVERY_INITRC := device/htc/m8ql/recovery/init.rc
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888" # Not sure if this is correct - used auto pixel format patch
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
