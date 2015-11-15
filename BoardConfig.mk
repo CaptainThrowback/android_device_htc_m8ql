@@ -27,11 +27,11 @@
 BOARD_VENDOR := htc
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := MSM8939
+TARGET_BOOTLOADER_BOARD_NAME := MSM8916
 TARGET_NO_BOOTLOADER := true
 
 # Platform
-TARGET_BOARD_PLATFORM := msm8939
+TARGET_BOARD_PLATFORM := msm8916
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno405
 
 # Architecture
@@ -56,7 +56,6 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01f88000 --tags_offset 0x01d88000 --dt device/htc/m8ql/recovery/dt.img
 BOARD_CUSTOM_BOOTIMG_MK := device/htc/m8ql/recovery/mkbootimg.mk
-KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_CONFIG := m8qlul_defconfig
 
 # Partitions
@@ -76,18 +75,15 @@ BOARD_RECOVERY_SWIPE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_USES_MMCUTILS := true
 TARGET_RECOVERY_INITRC := device/htc/m8ql/recovery/init.rc
-TARGET_RECOVERY_PIXEL_FORMAT := "BGR_555"
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 # TWRP Build Flags
 TW_THEME := portrait_hdpi
 TW_INCLUDE_CRYPTO := true
 TW_NO_EXFAT_FUSE := true
-TW_NO_SCREEN_BLANK := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 
 # Vendor Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_m8ql
+TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := device/htc/m8ql/init/init_m8ql.c
