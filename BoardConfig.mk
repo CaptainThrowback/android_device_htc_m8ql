@@ -51,12 +51,10 @@ TARGET_2ND_CPU_VARIANT := generic
 # Kernel
 BOARD_KERNEL_BASE := 0x80078000
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive
-BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01f88000 --tags_offset 0x01d88000 --dt device/htc/m8ql/recovery/dt.img
-BOARD_CUSTOM_BOOTIMG_MK := device/htc/m8ql/recovery/mkbootimg.mk
-TARGET_KERNEL_CONFIG := m8qlul_defconfig
+TARGET_PREBUILT_KERNEL := device/htc/m8ql/recovery/kernel
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
@@ -74,13 +72,11 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_USES_MMCUTILS := true
-TARGET_RECOVERY_INITRC := device/htc/m8ql/recovery/init.rc
 
 # TWRP Build Flags
 TW_THEME := portrait_hdpi
-TW_INCLUDE_CRYPTO := true
+#TW_INCLUDE_CRYPTO := true
 TW_NO_EXFAT_FUSE := true
-TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 
 # Vendor Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
