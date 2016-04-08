@@ -82,4 +82,4 @@ TW_NO_EXFAT_FUSE := true
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/htc/m8ql/init/init_m8ql.c
+TARGET_LIBINIT_DEFINES_FILE := device/htc/m8ql/recovery/init/init_m8ql.c
